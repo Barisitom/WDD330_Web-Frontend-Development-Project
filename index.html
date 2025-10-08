@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Healthy Lifestyle Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="avatar">👤</div>
+        <h1>Healthy<br>Dashboard</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Dashboard</a></li>
+          <li><a href="exercise.html">Exercise</a></li>
+          <li><a href="nutrition.html">Nutrition</a></li>
+          <li><a href="habit.html">Habit</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <h2>Healthy Lifestyle Dashboard</h2>
+        <button class="btn logout">Log out</button>
+      </header>
+
+      <section class="summary">
+        <h3>Today's Summary</h3>
+        <div class="cards">
+          <div class="card">
+            <h4>Workouts</h4>
+            <p class="value" id="workouts-count">0</p>
+          </div>
+          <div class="card">
+            <h4>Calories</h4>
+            <p class="value" id="calories-count">0</p>
+          </div>
+          <div class="card">
+            <h4>Water</h4>
+            <p class="value" id="water-count">0</p>
+          </div>
+        </div>
+
+        <div class="charts">
+          <div class="chart" id="chart-1">Weekly progress (placeholder)</div>
+          <div class="chart" id="chart-2">Hydration (placeholder)</div>
+        </div>
+
+        <div class="quick-actions">
+          <button class="btn primary" id="log-workout">Log Workout</button>
+          <button class="btn secondary" id="log-water">Log Water</button>
+        </div>
+      </section>
+
+      <section class="activity">
+        <h3>Log Activity</h3>
+        <table class="activity-table">
+          <thead>
+            <tr><th>Activity</th><th>Notes</th></tr>
+          </thead>
+          <tbody id="activity-tbody">
+            <!-- logs inserted here -->
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

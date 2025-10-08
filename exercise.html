@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercise Planner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar"> <!-- same nav as index -> copy or include server-side -->
+      <div class="brand"><div class="avatar">👤</div><h1>Healthy<br>Dashboard</h1></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="exercise.html" class="active">Exercise</a></li>
+          <li><a href="nutrition.html">Nutrition</a></li>
+          <li><a href="habit.html">Habit</a></li>
+          <li><a href="progress.html">Progress</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <h2>Exercise Planner</h2>
+      </header>
+
+      <section class="exercise-search">
+        <form id="exercise-search-form">
+          <input type="search" id="exercise-query" placeholder="Search exercises (e.g. squat, push-up)">
+          <button class="btn" type="submit">Search</button>
+        </form>
+        <div id="exercise-results"> <!-- results go here --> </div>
+      </section>
+
+      <section class="exercise-planner">
+        <h3>Weekly Plan</h3>
+        <div id="weekly-plan">(empty)</div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="js/exercise.js"></script>
+</body>
+</html>
