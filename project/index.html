@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Healthy Lifestyle Dashboard</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <img src="assets/images/placeholder1.svg" alt="logo" width="48" height="36">
+        <h1>Healthy Dashboard</h1>
+      </div>
+      <div>
+        <button id="syncBtn" class="primary">Sync Data</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h2>Exercise Planner</h2>
+          <div class="form-group">
+            <label for="exerciseType">Exercise</label>
+            <select id="exerciseType">
+              <option value="pushups">Push Ups</option>
+              <option value="squats">Squats</option>
+              <option value="running">Running</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="duration">Duration (minutes)</label>
+            <input id="duration" type="number" min="1" value="20">
+          </div>
+          <button id="addExercise" class="primary">Add to Plan</button>
+          <h3>Today's Plan</h3>
+          <ul id="exerciseList" class="small"></ul>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h2>Nutrition Tracker</h2>
+          <div class="form-group">
+            <label for="mealName">Meal Name</label>
+            <input id="mealName" type="text" placeholder="e.g., Chicken Salad">
+          </div>
+          <div class="form-group">
+            <label for="calories">Calories</label>
+            <input id="calories" type="number" min="0" value="400">
+          </div>
+          <button id="addMeal" class="primary">Add Meal</button>
+          <h3>Meals</h3>
+          <ul id="mealList" class="small"></ul>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h2>Progress</h2>
+          <canvas id="progressChart" width="400" height="120"></canvas>
+          <div class="footer-note">Charts show basic calories and exercise minutes over time.</div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>Habit Tracker</h3>
+          <div id="habits" class="small"></div>
+          <button id="toggleHabit" class="primary" style="margin-top:8px;">Toggle Habit (Drink Water)</button>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h3>Hydration</h3>
+          <div class="track-row">
+            <div>
+              <div class="small">Glasses today</div>
+              <div id="glassesCount">0</div>
+            </div>
+            <div>
+              <button id="addGlass" class="primary">+1</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h3>Recommendations</h3>
+          <div id="recommendations" class="small"></div>
+        </div>
+
+      </aside>
+    </div>
+
+  </div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
