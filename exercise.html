@@ -9,8 +9,11 @@
 </head>
 <body>
   <div class="app">
-    <aside class="sidebar"> <!-- same nav as index -> copy or include server-side -->
-      <div class="brand"><div class="avatar">👤</div><h1>Healthy<br>Dashboard</h1></div>
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="avatar">👤</div>
+        <h1>Healthy<br>Dashboard</h1>
+      </div>
       <nav>
         <ul>
           <li><a href="index.html">Dashboard</a></li>
@@ -29,10 +32,10 @@
 
       <section class="exercise-search">
         <form id="exercise-search-form">
-          <input type="search" id="exercise-query" placeholder="Search exercises (e.g. squat, push-up)">
-          <button class="btn" type="submit">Search</button>
+          <input type="search" id="exercise-query" placeholder="Search exercises (e.g. squat, push-up)" required>
+          <button class="btn" id="search" type="submit">Search</button>
         </form>
-        <div id="exercise-results"> <!-- results go here --> </div>
+        <div id="exercise-results"></div>
       </section>
 
       <section class="exercise-planner">
@@ -41,6 +44,7 @@
       </section>
     </main>
   </div>
+
   <script type="module" src="js/exercise.js"></script>
 </body>
 </html>
