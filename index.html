@@ -1,79 +1,98 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Healthy Lifestyle Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Healthy Lifestyle Dashboard</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div class="app">
-    <aside class="sidebar">
+  <div class="container">
+    <div class="header">
       <div class="brand">
-        <div class="avatar">👤</div>
-        <h1>Healthy<br>Dashboard</h1>
+        <img src="assets/images/placeholder1.svg" alt="logo" width="48" height="36">
+        <h1>Healthy Dashboard</h1>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Dashboard</a></li>
-          <li><a href="exercise.html">Exercise</a></li>
-          <li><a href="nutrition.html">Nutrition</a></li>
-          <li><a href="habit.html">Habit</a></li>
-          <li><a href="progress.html">Progress</a></li>
-        </ul>
-      </nav>
-    </aside>
+      <div>
+        <button id="syncBtn" class="primary">Sync Data</button>
+      </div>
+    </div>
 
-    <main class="main">
-      <header class="main-header">
-        <h2>Healthy Lifestyle Dashboard</h2>
-        <button class="btn logout">Log out</button>
-      </header>
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h2>Exercise Planner</h2>
+          <div class="form-group">
+            <label for="exerciseType">Exercise</label>
+            <select id="exerciseType">
+              <option value="pushups">Push Ups</option>
+              <option value="squats">Squats</option>
+              <option value="running">Running</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="duration">Duration (minutes)</label>
+            <input id="duration" type="number" min="1" value="20">
+          </div>
+          <button id="addExercise" class="primary">Add to Plan</button>
+          <h3>Today's Plan</h3>
+          <ul id="exerciseList" class="small"></ul>
+        </div>
 
-      <section class="summary">
-        <h3>Today's Summary</h3>
-        <div class="cards">
-          <div class="card">
-            <h4>Workouts</h4>
-            <p class="value" id="workouts-count">0</p>
+        <div class="card" style="margin-top:12px;">
+          <h2>Nutrition Tracker</h2>
+          <div class="form-group">
+            <label for="mealName">Meal Name</label>
+            <input id="mealName" type="text" placeholder="e.g., Chicken Salad">
           </div>
-          <div class="card">
-            <h4>Calories</h4>
-            <p class="value" id="calories-count">0</p>
+          <div class="form-group">
+            <label for="calories">Calories</label>
+            <input id="calories" type="number" min="0" value="400">
           </div>
-          <div class="card">
-            <h4>Water</h4>
-            <p class="value" id="water-count">0</p>
+          <button id="addMeal" class="primary">Add Meal</button>
+          <h3>Meals</h3>
+          <ul id="mealList" class="small"></ul>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h2>Progress</h2>
+          <canvas id="progressChart" width="400" height="120"></canvas>
+          <div class="footer-note">Charts show basic calories and exercise minutes over time.</div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>Habit Tracker</h3>
+          <div id="habits" class="small"></div>
+          <button id="toggleHabit" class="primary" style="margin-top:8px;">Toggle Habit (Drink Water)</button>
+        </div>
+
+        <div class="card" style="margin-top:12px;">
+          <h3>Hydration</h3>
+          <div class="track-row">
+            <div>
+              <div class="small">Glasses today</div>
+              <div id="glassesCount">0</div>
+            </div>
+            <div>
+              <button id="addGlass" class="primary">+1</button>
+            </div>
           </div>
         </div>
 
-        <div class="charts">
-          <div class="chart" id="chart-1">Weekly progress (placeholder)</div>
-          <div class="chart" id="chart-2">Hydration (placeholder)</div>
+        <div class="card" style="margin-top:12px;">
+          <h3>Recommendations</h3>
+          <div id="recommendations" class="small"></div>
         </div>
 
-        <div class="quick-actions">
-          <button class="btn primary" id="log-workout">Log Workout</button>
-          <button class="btn secondary" id="log-water">Log Water</button>
-        </div>
-      </section>
+      </aside>
+    </div>
 
-      <section class="activity">
-        <h3>Log Activity</h3>
-        <table class="activity-table">
-          <thead>
-            <tr><th>Activity</th><th>Notes</th></tr>
-          </thead>
-          <tbody id="activity-tbody">
-            <!-- logs inserted here -->
-          </tbody>
-        </table>
-      </section>
-
-    </main>
   </div>
 
-  <script type="module" src="js/app.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

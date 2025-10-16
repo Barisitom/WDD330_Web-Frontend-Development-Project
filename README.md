@@ -1,22 +1,22 @@
-# Healthy Lifestyle Dashboard
+# Project — Healthy Lifestyle Dashboard (Updated)
 
-Initial scaffold for the project. Pages: index, exercise, nutrition, habit, progress.
+This project was updated to include:
+- API integration stubs for Nutrition API and ExerciseDB.
+- Exercise Planner and Nutrition Tracker UI and JS logic.
+- localStorage helpers to persist user data.
+- Chart.js integration (via CDN) for progress visualization.
+- Habit Tracker & Hydration Tracker finalization (basic implementation).
+- Responsive CSS for mobile and desktop.
+- Personalized recommendations & motivational tips logic.
+- Placeholder images added in /assets/images/.
+- Test checklist and steps for preparing the final presentation.
 
-Open `index.html` in a static server (or live server) to preview.
+## File highlights
+- index.html — main entry with UI skeleton and CDN links.
+- assets/js/app.js — core application logic, API wrappers, localStorage, trackers.
+- assets/css/styles.css — responsive styles.
+- assets/images/* — placeholder images.
+- presentation_notes.md — notes for final presentation.
 
-Next steps:
-- Implement ExerciseDB and Nutrition API integration
-- Add charts with Chart.js or Recharts
-- Improve responsive styles and accessibility
-```
-
----
-
-If you'd like, I can now:
-
-* generate these files in the project folder for download,
-* add Chart.js templates to `progress.html`,
-* implement a sample ExerciseDB API call in `js/exercise.js`, or
-* improve responsive styles and accessibility.
-
-Which next step would you like?
+## How to run
+Open `index.html` in a modern browser (Chrome/Edge/Firefox). No server required for demo (uses client-side localStorage).
